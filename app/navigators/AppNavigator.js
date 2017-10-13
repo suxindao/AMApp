@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {addNavigationHelpers, StackNavigator} from 'react-navigation'
 
-import LoginScreen from '../containers/test/LoginScreen'
-import MainScreen from '../containers/test/MainScreen'
-import ProfileScreen from '../containers/test/ProfileScreen'
+import LoginScreen from '../components/test/LoginScreen'
+import MainScreen from '../components/test/MainScreen'
+import ProfileScreen from '../components/test/ProfileScreen'
 
 export const AppNavigator = StackNavigator({   // 堆栈导航，所有屏幕的集合
     Login: {
