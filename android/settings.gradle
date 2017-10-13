@@ -1,0 +1,3 @@
+rootProject.name = 'AMApp'
+
+include ':app'
