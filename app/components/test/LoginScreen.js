@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
 });
 
 const LoginScreen = ({navigation}) => {
+    console.log("this.props111 = ", this.props)
     console.log("navigation.state = ", navigation.state)
     return (
         <View style={styles.container}>

@@ -8,10 +8,12 @@ export default function clientMiddleware(client) {
     return ({dispatch, getState}) =>
         next => action => {
             if (typeof action === 'function') {
+                console.log("1111")
                 return action(dispatch, getState)
             }
 
             if (isPromise(action)) {
+                console.log("2222")
                 return action.then(dispatch)
             }
 

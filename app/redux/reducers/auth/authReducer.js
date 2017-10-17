@@ -4,7 +4,9 @@
 
 'use strict';
 
-const initialAuthState = {isLoggedIn: false};
+const initialAuthState = {
+    isLoggedIn: false
+};
 
 export default function auth(state = initialAuthState, action) {
     switch (action.type) {
