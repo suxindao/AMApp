@@ -1,7 +1,9 @@
 import React from 'react'
+import {BackHandler, ToastAndroid} from "react-native";
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {addNavigationHelpers, StackNavigator} from 'react-navigation'
+import {addNavigationHelpers, StackNavigator, NavigationActions} from 'react-navigation'
+import TimerMixin from 'react-timer-mixin'
 
 // import LoginScreen from '../components/test/LoginScreen'
 import LoginScreen from '../containers/login/Login'
@@ -30,6 +32,42 @@ export const AppNavigator = StackNavigator({   // 堆栈导航，所有屏幕的
 })
 
 class AppWithNavigationState extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.exit = false
+        this.mixin = TimerMixin
+    }
+
+    componentDidMount() {
+        BackHandler.addEventListener("hardwareBackPress", this.onBackPress);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener("hardwareBackPress", this.onBackPress);
+    }
+
+    onBackPress = () => {
+        const {dispatch, nav} = this.props;
+        console.log("nav = ", nav)
+        // if (nav.index === 0) {
+        if (nav.routes[nav.index].routeName === 'Main') {
+            if (this.exit) {
+                return false
+            } else {
+                this.exit = true
+                this.mixin.setTimeout(() => {
+                    this.exit = false
+                }, 3 * 1000)
+                ToastAndroid.show('再按一次退出应用', ToastAndroid.SHORT)
+                return true
+            }
+        } else {
+            dispatch(NavigationActions.back());
+            return true;
+        }
+    };
+
     render() {
         console.log("AppNavigator props = ", this.props)
         return (

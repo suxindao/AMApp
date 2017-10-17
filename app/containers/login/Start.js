@@ -3,14 +3,14 @@
  */
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity, Image, InteractionManager, Platform, Alert, Linking} from 'react-native'
-import {Actions} from 'react-native-router-flux'
+import TimerMixin from 'react-timer-mixin'
 import codePush from 'react-native-code-push'
 import DeviceInfo from 'react-native-device-info'
 
 //redux相关
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
-import {initApp, upgradeInfo} from '../../redux/reducers/login/startReducer'
+import {initApp, upgradeInfo} from '../../redux/modules/startReducer'
 
 // presenters
 import {validateTokenFromRemote} from './presenters/loginPresenter'
@@ -37,6 +37,7 @@ class Start extends Component {
     constructor(props) {
         super(props)
 
+        this.mixin = TimerMixin
         // func
         this._doStart = this._doStart.bind(this)
         this._toUpdateRemind = this._toUpdateRemind.bind(this) // 更新提示
@@ -48,7 +49,10 @@ class Start extends Component {
     }
 
     componentWillMount() {
-        this._doStart()
+        InteractionManager.runAfterInteractions(() => {
+            //执行耗时的同步任务
+            this._doStart()
+        })
     }
 
     _doStart() {
@@ -86,7 +90,7 @@ class Start extends Component {
     async _initApp(client, pathValidateUser) {
         try {
             let ret = await validateTokenFromRemote(client, pathValidateUser)
-            setTimeout(() => {
+            this.mixin.setTimeout(() => {
                 if (ret) {
                     // Actions.login()
                     this.props.dispatch(NavigationActions.navigate({routeName: 'Login'}))

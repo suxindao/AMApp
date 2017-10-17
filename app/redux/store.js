@@ -22,7 +22,7 @@
 
 
 import {createStore as _createStore, applyMiddleware, compose} from 'redux';
-import AppReducer from './reducers'
+import AppReducer from './modules'
 import logger from 'redux-logger'
 import ApiClient from '../helpers/ApiClient'
 import clientMiddleware from './middleware/clientMiddleware'

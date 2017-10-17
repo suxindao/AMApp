@@ -17,7 +17,7 @@ import WithConnection from '../../modules/enhanced/WithConnection'
 // redux
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {loginSubmit} from '../../redux/reducers/login/loginReducer'
+import {loginSubmit} from '../../redux/modules/loginReducer'
 // presenter
 import {fetchUserInfoData} from './presenters/loginPresenter'
 

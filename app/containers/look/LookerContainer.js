@@ -21,8 +21,8 @@ import ScrollTab from '../look/components/ScrollTab'
 // redux
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {loadData} from '../../redux/reducers/look/lookContainerReducer'
-import {setMineTabbarPoint} from '../../redux/reducers/look/tabbarReducer'
+import {loadData} from '../../redux/modules/look/lookContainerReducer'
+import {setMineTabbarPoint} from '../../redux/modules/look/tabbarReducer'
 // presenter
 import {fetchPageWithoutCache} from '../look/presenters/pagePresenter'
 

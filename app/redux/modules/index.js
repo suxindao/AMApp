@@ -3,9 +3,9 @@ import {combineReducers} from 'redux';
 import nav from './nav/navReducer'
 import auth from './auth/authReducer'
 /// common
-import login from './login/loginReducer'
-import start from './login/startReducer'
-import tabbar from './login/tabbarReducer'
+import login from './loginReducer'
+import start from './startReducer'
+import tabbar from './tabbarReducer'
 /// look
 import look from './look/lookContainerReducer'
 import lookStoreList from './look/storeList'
