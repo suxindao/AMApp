@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity, ScrollView, TouchableHighlight} from 'react-native'
 import {httpIP} from '../../../../helpers/Upload'
-
+import moment from 'moment-timezone'
 // common
 import {subsectionText} from '../../../../constants/common'
 
@@ -242,7 +242,7 @@ export default class MainContract extends Component {
                         placeholder: '请选择',
                         editable: editable.signed_date,
                         key: 'signed_date',
-                        maxDate: new Date().Format('yyyy-MM-dd'),
+                        maxDate: moment().format('YYYY-MM-DD'),
                         value: this.props.data.signed_date
                     }}
                     callback={this.callback}

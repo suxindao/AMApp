@@ -18,7 +18,7 @@ import {colors, distances, fontScale} from '../../../../constants/style'
 import MainContract from '../../../../containers/home/contract/components/MainContract'
 import {toastShort} from '../../../../constants/toast'
 import ContractButton from '../components/ContractButton'
-// redux
+// Redux
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
 import {
@@ -332,7 +332,7 @@ class CreatMainContract extends Component {
                         {text: '确定', onPress: fun}
                     ]
                 )
-            }else{
+            } else {
                 fun()
             }
         }
@@ -523,20 +523,21 @@ class CreatMainContract extends Component {
 
     render() {
         let {scrollEnabled = true, needKeyWord = true} = this.props
-        return (
-            <AutoKeywordScrollView scrollEnabled={scrollEnabled} needKeyWord={needKeyWord}
-                                   scrollStyle={{backgroundColor: colors.bgColor, flex: 1}}>
-                <MainContract data={this.getMainContactData()} contractCallback={this.contractCallback}/>
-                <ContractButton
-                    btnType={this.props.btnType}
-                    fromPage={this.props.fromPage}
-                    editTouch={this.editTouch}
-                    editInfo={this.editInfo}
-                    temporary={this.temporary}
-                    subInfo={this.subInfo}
-                />
-            </AutoKeywordScrollView>
-        )
+        return null
+        // return (
+        //     <AutoKeywordScrollView scrollEnabled={scrollEnabled} needKeyWord={needKeyWord}
+        //                            scrollStyle={{backgroundColor: colors.bgColor, flex: 1}}>
+        //         <MainContract data={this.getMainContactData()} contractCallback={this.contractCallback}/>
+        //         <ContractButton
+        //             btnType={this.props.btnType}
+        //             fromPage={this.props.fromPage}
+        //             editTouch={this.editTouch}
+        //             editInfo={this.editInfo}
+        //             temporary={this.temporary}
+        //             subInfo={this.subInfo}
+        //         />
+        //     </AutoKeywordScrollView>
+        // )
     }
 }
 

@@ -1,6 +1,9 @@
 /**
  * Created by Joe on 2017/3/10.
  */
+
+const moment = require('moment-timezone')
+
 const CREATEMAINCON_SETSTATE = 'haoqix/CREATEMAINCON_SETSTATE'
 const CREATEMAINCON_RSETSTATE = 'haoqix/CREATEMAINCON_RSETSTATE'
 const CREATEMAINCON_LOAD_START = 'haoqix/CREATEMAINCON_LOAD_START'
@@ -38,8 +41,8 @@ const initialState = {
     contract_id: '',//合同id
     account_id: '',//账号id
     code: '',//编号
-    signed_date: new Date().Format('yyyy-MM-dd'),//签约日期
-    from_date: new Date().Format('yyyy-MM-dd'),//开始日期
+    signed_date: moment().format('YYYY-MM-DD'),//签约日期
+    from_date: moment().format('YYYY-MM-DD'),//开始日期
     to_date: '',//结束日期
     am_name: '',//签约AM
     name: '',//企业名称
@@ -104,8 +107,8 @@ export default function reducer(state = initialState, action = {}) {
                 contract_id: '',//合同id
                 account_id: '',//账号id
                 code: '',//编号
-                signed_date: new Date().Format('yyyy-MM-dd'),//签约日期
-                from_date: new Date().Format('yyyy-MM-dd'),//开始日期
+                signed_date: moment().format('YYYY-MM-DD'),//签约日期
+                from_date: moment().format('YYYY-MM-DD'),//开始日期
                 to_date: '',//结束日期
                 am_name: '',//签约AM
                 name: '',//企业名称

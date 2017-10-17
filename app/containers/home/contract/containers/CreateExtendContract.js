@@ -6,6 +6,7 @@ import {View, Text, TouchableOpacity, ScrollView, Alert, Image, DeviceEventEmitt
 import {Actions} from 'react-native-router-flux'
 import _ from 'lodash'
 import AutoKeywordScrollView from '../../../../components/common/AutoKeywordScrollView'
+import moment from 'moment-timezone'
 
 // style
 import {colors, distances, fontScale} from './../../../../constants/style'
@@ -635,7 +636,7 @@ class InputItem extends Component {
                         hasLine: true,
                         title: '签约日期',
                         type: 'date',
-                        placeholder: new Date().Format('yyyy-MM-dd'),
+                        placeholder: moment().format('YYYY-MM-DD'),
                         editable: editable.signed_date,
                         key: 'signed_date',
                         value: data.signed_date
@@ -647,7 +648,7 @@ class InputItem extends Component {
                         hasLine: true,
                         title: '开始日期',
                         type: 'date',
-                        placeholder: new Date().Format('yyyy-MM-dd'),
+                        placeholder: moment().format('YYYY-MM-DD'),
                         editable: editable.from_date,
                         key: 'from_date',
                         value: data.from_date

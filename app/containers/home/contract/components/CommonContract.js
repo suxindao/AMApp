@@ -9,9 +9,7 @@ import _ from 'lodash'
 // style
 import {colors, distances, fontScale} from '../../../../constants/style'
 // 组件
-import ContentComponent from '../../../../components/common/ContentComponent'
-import PhotoSelect from '../../../../components/photoSelect'
-import Contact from './../../store/components/Contact'
+import moment from 'moment-timezone'
 
 /**
  * 服务合同组件
@@ -115,7 +113,7 @@ export default class CommonContract extends Component{
             hasLine:true,
             title:'签约日期',
             type:'date',
-            placeholder:new Date().Format('yyyy-MM-dd'),
+            placeholder:moment().format('YYYY-MM-DD'),
             editable:true,
             key:'signed_date',
             value:data.signed_date
@@ -127,7 +125,7 @@ export default class CommonContract extends Component{
             hasLine:true,
             title:'开始日期',
             type:'date',
-            placeholder:new Date().Format('yyyy-MM-dd'),
+            placeholder:moment().format('YYYY-MM-DD'),
             editable:true,
             key:'from_date',
             value:data.from_date
