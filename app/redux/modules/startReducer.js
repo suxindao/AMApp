@@ -10,7 +10,7 @@ const UPGRADE_SUCCESS = 'haoqix/AM_START_UPGRADE_SUCCESS'
 const UPGRADE_FAIL = 'haoqix/AM_START_UPGRADE_FAIL'
 
 const initialState = {
-	initialization: true,
+	initializtion: true,
 	upgrade_loading: true,
 	upgrade_loading_success: false,
 }
@@ -20,17 +20,17 @@ export default function reducer(state = initialState, action = {}){
 		case LOAD_START:
 			return {
 				...state,
-                initialization: true,
+				initializtion: true,
 			}
 		case LOAD_SUCCESS:
 			return {
 				...state,
-                initialization: false,
+				initializtion: false,
 			}
 		case LOAD_FAIL:
 			return {
 				...state,
-                initialization: false,
+				initializtion: false,
 			}
 		case UPGRADE_START:
 			return {
