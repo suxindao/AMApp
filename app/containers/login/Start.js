@@ -93,18 +93,18 @@ class Start extends Component {
             this.mixin.setTimeout(() => {
                 if (ret) {
                     // Actions.login()
-                    this.props.dispatch(NavigationActions.navigate({routeName: 'Login'}))
+                    this.props.dispatch(NavigationActions.navigate({routeName: 'login'}))
                     return true
                 } else {
                     // Actions.login()
-                    this.props.dispatch(NavigationActions.navigate({routeName: 'Login'}))
+                    this.props.dispatch(NavigationActions.navigate({routeName: 'login'}))
                     throw new Error('_initApp ret is null')
                 }
             }, 2000)
         } catch (e) {
             console.log('Start _initApp e===>', e)
             // Actions.login()
-            this.props.dispatch(NavigationActions.navigate({routeName: 'Login'}))
+            this.props.dispatch(NavigationActions.navigate({routeName: 'login'}))
             throw e
         }
     }

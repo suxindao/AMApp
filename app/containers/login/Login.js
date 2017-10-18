@@ -179,7 +179,7 @@ class Login extends Component {
         this.refs.loginFloatingLayer.hide()
         if (result) {
             // Actions.look()
-            this.props.dispatch(NavigationActions.navigate({routeName: 'Look'}))
+            this.props.dispatch(NavigationActions.navigate({routeName: 'look'}))
         } else {
             if (this.props.connection) {
                 toastShort('账号或密码错误')

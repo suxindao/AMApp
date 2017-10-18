@@ -6,8 +6,8 @@ import {NavigationActions} from 'react-navigation';
 
 const AuthButton = ({logout, loginScreen, isLoggedIn}) => (
     <Button style={{height: 50, color: '#F00', margin: 10}}
-        title={isLoggedIn ? 'Log Out' : 'Open Login Screen'}
-        onPress={isLoggedIn ? logout : loginScreen}
+            title={isLoggedIn ? 'Log Out' : 'Open Login Screen'}
+            onPress={isLoggedIn ? logout : loginScreen}
     />
 );
 
@@ -24,7 +24,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch({type: 'Logout'}),
     loginScreen: () =>
-        dispatch(NavigationActions.navigate({routeName: 'Login'})),
+        dispatch(NavigationActions.navigate({routeName: 'login'})),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthButton);

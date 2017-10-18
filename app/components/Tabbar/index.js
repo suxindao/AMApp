@@ -5,7 +5,8 @@
 
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity, TouchableHighlight, Image, StyleSheet} from 'react-native';
-import {Actions} from 'react-native-router-flux'
+// Navigation
+import {NavigationActions} from 'react-navigation';
 
 // components
 import {PointComponent} from '../common/PointComponent'
@@ -36,15 +37,18 @@ class TabIcon extends Component {
     tabClick(code) {
         switch (code) {
             case TabCode.LOOK_TAB: {
-                Actions.look()
+                // Actions.look()
+                this.props.dispatch(NavigationActions.navigate({routeName: 'look'}))
             }
                 break;
             case TabCode.HOME_TAB: {
-                Actions.home()
+                // Actions.home()
+                this.props.dispatch(NavigationActions.navigate({routeName: 'home'}))
             }
                 break;
             case TabCode.MINE_TAB: {
-                Actions.mine()
+                // Actions.mine()
+                this.props.dispatch(NavigationActions.navigate({routeName: 'mine'}))
             }
                 break;
             default:
